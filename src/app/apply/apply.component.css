@@ -1,0 +1,25 @@
+#barner{
+    margin-top: 70px;
+    background-image: url(https://marvel-b1-cdn.bc0a.com/f00000000290162/images.ctfassets.net/2htm8llflwdx/186sT0ujcB5ri7nzgoQnxh/12804dbac6c58d7dafd2ad32d8b9daee/GettyImages-1252667874.jpg?fit=thumb);
+    height: 70vh;
+    width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-bottom: 30px;
+}
+
+#barner div{
+    width: inherit;
+    height: 70vh;
+    background-size: 100% 100%;
+    background-color: rgba(34, 34, 34, 0.8);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#barner div p{
+    font-size: 50px;
+}

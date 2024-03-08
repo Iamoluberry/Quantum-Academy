@@ -1,0 +1,25 @@
+.login {
+    min-height: 70vh;
+    margin-top: 70px;
+  }
+  
+  .bg-image {
+    background-image: url('https://play-lh.googleusercontent.com/gwHEKMIhxYpj7moeK_DEvEntXtJ1oDLEPRmALK1TrIihtIKksoMrB5mDEzHN_pSOqfk');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .login-heading {
+    font-weight: 300;
+  }
+  
+  .btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+  }
+  
+  .home:hover{
+    background-color: #ffc107;
+    color: white;
+}

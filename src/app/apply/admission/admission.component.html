@@ -1,0 +1,192 @@
+<nav class="navbar navbar-expand-sm bg-light fixed-top">
+  <div class="container">
+    <a class="navbar-nav" routerLink="/home"><img src="https://play-lh.googleusercontent.com/gwHEKMIhxYpj7moeK_DEvEntXtJ1oDLEPRmALK1TrIihtIKksoMrB5mDEzHN_pSOqfk" alt="Logo" id="nav-logo"/></a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-pills">
+
+        <li class="nav-item"><a class="nav-link" aria-current="page" routerLink="/home" routerLinkActive="active bg-warning ">Home</a></li>
+
+        <li class="nav-item"><a class="nav-link" routerLink="/courses" routerLinkActive="active bg-warning">Courses</a></li>
+
+        <li class="nav-item"><a class="nav-link active bg-warning " routerLink="/apply" routerLinkActive="active bg-warning">Apply</a></li>
+
+        <li class="nav-item"><a class="nav-link" routerLink="/contact" routerLinkActive="active bg-warning">Contact</a></li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+<div class="card container " style="width: 75vw; margin-top: 70px;" *ngIf="displayUserDetails">
+  <img class="card-img-top" src="assets/images/img_avatar1.png" alt="Student image" style="height: 60vh;">
+  <div class="card-body" >
+    <h5 class="card-title">Applicant details</h5>
+      <p class="card-text">First Name: {{userDetails.firstName}}</p>
+      <p class="card-text">Second Name: {{userDetails.otherName}}</p>
+      <p class="card-text">Last Name: {{userDetails.lastName}}</p>
+      <p class="card-text">email: {{userDetails.email}}</p>
+      <p class="card-text">Country: {{userDetails.country}}</p>
+      <p class="card-text">State of Origin: {{userDetails.stateOfOrigin}}</p>
+      <p class="card-text">Date of birth: {{userDetails.DOB}}</p>
+      <p class="card-text">Gender: {{userDetails.gender}}</p>
+      <p class="card-text">Preferred course: {{userDetails.preferredCourse}}</p>      
+    <div class="d-flex gap-4">
+      <a class="btn btn-primary w-20 bg-success border-0" (click)="onClick()">Finalise</a>
+      <a class="btn btn-primary w-20 bg-warning border-0" (click)="editUserDetails()">Edit</a>
+      <a class="btn btn-primary w-20 bg-danger border-0" (click)="forfeitAdmission()">Forfeit</a>
+    </div>
+  </div>
+</div>
+
+<div class="card container " style="width: 75vw; margin-top: 70px;" *ngIf="displayngModelForm">
+  <img class="card-img-top" src="assets/images/img_avatar1.png" alt="Student image" style="height: 60vh;">
+  <div class="card-body" >
+    <h5 class="card-title">Applicant details</h5>
+
+      <p class="card-text mb-3">
+        <label class="form-label card-text">Email</label>
+        <input [(ngModel)]="userDetails.email" type="email" class="form-control">
+      </p>
+          
+      <p class="mb-3">
+              <label class="form-label">First name</label>
+              <input [(ngModel)]="userDetails.firstName" type="name" class="form-control">
+      </p>
+      
+      <p class="mb-3">
+              <label class="form-label">Other name</label>
+              <input [(ngModel)]="userDetails.otherName" type="name" class="form-control">
+      </p>
+      
+      <p class="mb-3">
+              <label class="form-label">Last name</label>
+              <input [(ngModel)]="userDetails.lastName" type="name" class="form-control">
+      </p>
+            
+      <p class="mb-3">
+              <label class="form-label">Date of birth</label>
+              <input [(ngModel)]="userDetails.DOB" type="date" class="form-control">
+      </p>
+      
+      <p class="mb-3">
+              <label class="form-label">Country</label>
+              <select [(ngModel)]="userDetails.country" class="form-select" aria-label="Default select example">
+                  <option selected>Open this select menu</option>
+                  <option *ngFor="let country of countryApiContainer">{{country.country_name}}</option>
+                </select>
+      </p>
+      
+      <p class="mb-3">
+              <label class="form-label">State of origin</label>
+              <select [(ngModel)]="userDetails.stateOfOrigin" class="form-select" aria-label="Default select example">
+                  <option selected>Open this select menu</option>
+                  <option *ngFor="let state of stateApiContainer">{{state.state}}</option>
+                </select>
+      </p>
+      
+          <p class="mb-3">
+              <label class="form-label">Gender</label>
+              <select [(ngModel)]="userDetails.gender" class="form-select" aria-label="Default select example">
+                  <option selected>Open this select menu</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Prefer not to specify</option>
+                </select>
+          </p>
+      
+          <p class="mb-3">
+              <label class="form-label">Mode of learning</label>
+              <select [(ngModel)]="userDetails.modeOfLearning" class="form-select" aria-label="Default select example">
+                  <option selected>Open this select menu</option>
+                  <option>Online</option>
+                  <option>Physical</option>
+                </select>
+          </p>
+      
+          <p class="mb-3">
+              <label class="form-label">Preferred course of study</label>
+              <select [(ngModel)]="userDetails.preferredCourse" class="form-select" aria-label="Default select example">
+                  <option selected>Open this select menu</option>
+                  <option *ngFor="let course of courses">{{course.course}}</option>
+                </select>
+          </p>
+    <div>
+      <a class="btn btn-primary w-20 bg-warning border-0" (click)="saveEdittedUserDetails()">Save</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<hr class="text-warning mt-5">
+
+<!--footer-->
+<footer class="section-p1 mt-4">
+  <div class="col">
+      <img class="footerlogo" src="https://play-lh.googleusercontent.com/gwHEKMIhxYpj7moeK_DEvEntXtJ1oDLEPRmALK1TrIihtIKksoMrB5mDEzHN_pSOqfk" alt="logo">
+      <h4 class="font-weight-bold">Contact</h4>
+      <p><strong>Address:</strong> Pepper Road, Hazel Grove, Stockport, Cheshire, SK7 5SA, UK.</p>
+      <p><Strong>Phone:</Strong> +44 2035 143305</p>
+      <P><Strong>Hours:</Strong> 10:00 - 18:00, Mon - Fri</P>
+      <div class="follow">
+          <h4 class="font-weight-bold">Follow Us</h4>
+          <div class="icon">
+              <i class="fab fa-facebook"></i>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-youtube"></i>
+              <i class="fab fa-pinterest"></i>
+          </div>
+      </div>
+  </div>
+
+  <div class="col">
+      <h4 class="font-weight-bold">Study</h4>
+      <a href="#">Undergraduate</a>
+      <a href="#">Postgraduate</a>
+      <a href="#">Distance learning</a>
+      <a href="#">Two-year accelerated degrees</a>
+      <a href="#">Partnerships</a>            
+  </div>
+
+  <div class="col">
+      <h4 class="font-weight-bold">Information for</h4>
+      <a href="#">Schools and colleges</a>
+      <a href="#">Alumni</a>
+      <a href="#">Current students</a>
+      <a href="#">Current staff</a>         
+  </div>
+
+  <div class="col install">
+      <h4 class="font-weight-bold">Install App</h4>
+      <p>Get app on Apple store or Play store</p>
+      <div class="row">
+          <img src="https://github.com/Iamoluberry/main-ecommerce-website/blob/main/images/app%20store.JPG?raw=true" alt="">
+          <img src="https://github.com/Iamoluberry/main-ecommerce-website/blob/main/images/play%20store.JPG?raw=true" alt="">
+      </div>
+  </div>
+
+  <div class="copyright">
+      <p>&copy; Quantum Academy {{date}}</p>
+  </div>
+</footer>

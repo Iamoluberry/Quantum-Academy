@@ -1,0 +1,33 @@
+#barner{
+    margin-top: 70px;
+    background-image: url(https://media.istockphoto.com/id/1156917599/photo/group-of-graduate-students-holding-their-graduation-hats.jpg?s=612x612&w=0&k=20&c=_cz96rz_tCVnkrIMX-6U2bNhrEds19z6nmgj1LBqktM=);
+    height: 70vh;
+    width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-bottom: 30px;
+}
+
+#barner div{
+    width: inherit;
+    height: 70vh;
+    background-size: 100% 100%;
+    background-color: rgba(34, 34, 34, 0.8);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#barner div p{
+    font-size: 50px;
+}
+
+#courses-container{
+    margin-top: 20px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+  }

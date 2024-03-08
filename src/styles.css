@@ -1,0 +1,105 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+  }
+#nav-logo{
+    width: 50px;
+    height: 50px;
+}
+
+.nav-link.active{
+    background-color: #ffc107;
+      color: #000; 
+}
+
+
+
+/*footer*/
+.section-p1{
+    padding: 40px 80px;
+}
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+footer .footerlogo{
+    margin-bottom: 30px;
+    cursor: pointer;
+    width: 60px; 
+    height: 50px;
+}
+
+footer h4{
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+footer p{
+    font-size: 13px;
+    margin: 0 0 8px 0;
+}
+
+footer a{
+    font-size: 13px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    color: black;
+}
+
+footer .follow{
+    margin-top: 20px;
+}
+footer .follow i{
+    cursor: pointer;
+}
+footer .fa-facebook{
+    color: #3b5998;
+}
+footer .fa-twitter{
+    color: rgb(29, 161, 242);
+}
+footer .fa-instagram{
+    color: rgb(231, 27, 27);
+}
+footer .fa-youtube{
+    color: #c4302b;
+}
+footer .fa-pinterest{
+    color: rgb(230, 0, 35);
+}
+
+
+footer .install .row img{
+    border: 1px solid black;
+    border-radius: 8px;
+
+    margin: 10px 0 15px 0;
+    cursor: pointer;
+
+    width: 25%;
+}
+
+footer i:hover{
+    color: rgb(255, 193, 7);
+}
+
+footer .install .row img:hover{
+    filter: invert(100%);
+}
+footer a:hover{
+    color: rgb(255, 193, 7);
+}
+
+footer .copyright{
+    width: 100%;
+    text-align: center;
+}

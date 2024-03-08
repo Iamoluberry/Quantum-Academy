@@ -1,0 +1,117 @@
+<nav class="navbar navbar-expand-sm bg-light fixed-top">
+    <div class="container">
+      <a class="navbar-nav" routerLink="/home"><img src="https://play-lh.googleusercontent.com/gwHEKMIhxYpj7moeK_DEvEntXtJ1oDLEPRmALK1TrIihtIKksoMrB5mDEzHN_pSOqfk" alt="Logo" id="nav-logo"/></a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-pills">
+
+          <li class="nav-item"><a class="nav-link" aria-current="page" routerLink="/home" routerLinkActive="active bg-warning ">Home</a></li>
+
+          <li class="nav-item"><a class="nav-link" routerLink="/courses" routerLinkActive="active bg-warning">Courses</a></li>
+
+          <li class="nav-item"><a class="nav-link" routerLink="/apply" routerLinkActive="active bg-warning">Apply</a></li>
+
+          <li class="nav-item"><a class="nav-link" routerLink="/contact" routerLinkActive="active bg-warning">Contact</a></li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+<div class="text-center" id="barner">
+    <div>
+        <p class="text-warning ">Join {{date}} batch to study with us at Quantum Academy</p>
+    </div>
+</div>
+
+<div class="container text-center">
+    <p style="font-size: 50px;">courses</p>
+</div>
+
+
+  <nav aria-label="Page navigation example "> 
+    <div class="container" *ngFor="let course of courses" id="courses-container">
+      <p class="text-decoration-underline "><i class="fas fa-book"></i> {{course.course}}</p>
+      <hr>
+      {{course.description}}
+      <br>
+      <button class="btn btn-warning" routerLink="/apply">Apply</button>
+    </div>
+    <ul class="pagination justify-content-center ">
+      <li class="page-item">
+        <a class="page-link text-black cursor-pointer" tabindex="-1" aria-disabled="true">Previous</a>
+      </li>
+      <li class="page-item active"><a class="page-link text-black bg-warning border-warning cursor-pointer" >1</a></li>
+      <li class="page-item "><a class="page-link text-black cursor-pointer" >2</a></li>
+      <li class="page-item "><a class="page-link text-black cursor-pointer" >3</a></li>
+      <li class="page-item"><a class="page-link text-black cursor-pointer" tabindex="+1">Next</a></li>
+    </ul>
+  </nav>
+
+
+  <hr class="text-warning mt-5">
+
+  <!--footer-->
+  <footer class="section-p1 mt-4">
+    <div class="col">
+        <img class="footerlogo" src="https://play-lh.googleusercontent.com/gwHEKMIhxYpj7moeK_DEvEntXtJ1oDLEPRmALK1TrIihtIKksoMrB5mDEzHN_pSOqfk" alt="logo">
+        <h4 class="font-weight-bold">Contact</h4>
+        <p><strong>Address:</strong> Pepper Road, Hazel Grove, Stockport, Cheshire, SK7 5SA, UK.</p>
+        <p><Strong>Phone:</Strong> +44 2035 143305</p>
+        <P><Strong>Hours:</Strong> 10:00 - 18:00, Mon - Fri</P>
+        <div class="follow">
+            <h4 class="font-weight-bold">Follow Us</h4>
+            <div class="icon">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-youtube"></i>
+                <i class="fab fa-pinterest"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <h4 class="font-weight-bold">Study</h4>
+        <a href="#">Undergraduate</a>
+        <a href="#">Postgraduate</a>
+        <a href="#">Distance learning</a>
+        <a href="#">Two-year accelerated degrees</a>
+        <a href="#">Partnerships</a>            
+    </div>
+
+    <div class="col">
+        <h4 class="font-weight-bold">Information for</h4>
+        <a href="#">Schools and colleges</a>
+        <a href="#">Alumni</a>
+        <a href="#">Current students</a>
+        <a href="#">Current staff</a>         
+    </div>
+
+    <div class="col install">
+        <h4 class="font-weight-bold">Install App</h4>
+        <p>Get app on Apple store or Play store</p>
+        <div class="row">
+            <img src="https://github.com/Iamoluberry/main-ecommerce-website/blob/main/images/app%20store.JPG?raw=true" alt="">
+            <img src="https://github.com/Iamoluberry/main-ecommerce-website/blob/main/images/play%20store.JPG?raw=true" alt="">
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>&copy; Quantum Academy {{date}}</p>
+    </div>
+</footer>

@@ -1,0 +1,23 @@
+#barner{
+    margin-top: 70px;
+    background-image: url(https://media.istockphoto.com/id/1306118503/photo/negative-feedback-and-rate-with-bad-smile-face.webp?b=1&s=170667a&w=0&k=20&c=uHM0L7Y-5t1JIMhsIyIZkhxLZFYcg-zvR1LAEvX5Fyg=);
+    height: 70vh;
+    width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-bottom: 30px;
+}
+
+#barner div{
+    width: inherit;
+    height: 70vh;
+    background-size: 100% 100%;
+    background-color: rgba(34, 34, 34, 0.8);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
