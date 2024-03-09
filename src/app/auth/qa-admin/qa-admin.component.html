@@ -44,115 +44,119 @@
 
 
   <!-- applicant table --> 
-  <div *ngIf="showApplicantTable">
+  <div class="container" *ngIf="showApplicantTable">
     <h4 class="container " >Applicants Table</h4>
-  <table class="table table-striped container-xl container-fluid-md text-center " >
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First Name</th>
-        <th scope="col">Other Name</th>
-        <th scope="col">Last Name</th>
-        <th scope="col">Email</th>
-        <th scope="col">DOB</th>
-        <th scope="col">Country</th>
-        <th scope="col">State</th>
-        <th scope="col">Gender</th>
-        <th scope="col">Modality</th>
-        <th scope="col">Course</th>
-        <th scope="col">ID</th>
-        <th scope="col">Edit</th>
-        <th scope="col">Delete</th>
-      </tr>
-    </thead>
-    <tbody *ngIf="displayUserDetails">
-      <tr *ngFor="let student of students, let i = index">
-        <th>{{i + 1}}</th>
-        <td>{{student.firstName}}</td>
-        <td>{{student.otherName}}</td>
-        <td>{{student.lastName}}</td>
-        <td>{{student.email}}</td>
-        <td>{{student.DOB}}</td>
-        <td>{{student.country}}</td>
-        <td>{{student.stateOfOrigin}}</td>
-        <td>{{student.gender}}</td>
-        <th>{{student.modeOfLearning}}</th>
-        <td>{{student.preferredCourse}}</td>
-        <td>{{student.id}}</td>        
-        <td><a class="btn"><i class="fas fa-edit" (click)="editApi(student)"></i></a></td>
-        <td><a class="btn" (click)="deleteApi(student)"><i class="fas fa-trash-alt" ></i></a></td>
-      </tr>
-    </tbody>
-
-    <tbody *ngIf="displayngModelForm">
-      <tr *ngFor="let student of students, let i = index">
-        <th>{{i + 1}}</th>
-        <td><input [(ngModel)]="student.firstName" type="name" class="form-control"></td>
-        <td><input [(ngModel)]="student.otherName" type="name" class="form-control"></td>
-        <td><input [(ngModel)]="student.lastName" type="name" class="form-control"></td>
-        <td><input [(ngModel)]="student.email" type="email" class="form-control"></td>
-        <td><input [(ngModel)]="student.DOB" type="date" class="form-control"></td>
-        <td><select [(ngModel)]="student.country" class="form-select" aria-label="Default select example">
-            <option selected>Open this select menu</option>
-            <option *ngFor="let country of countryApiContainer">{{country.country_name}}</option>
-          </select></td>
-        <td><select [(ngModel)]="student.stateOfOrigin" class="form-select" aria-label="Default select example">
-            <option selected>Open this select menu</option>
-            <option *ngFor="let state of stateApiContainer">{{state.state}}</option>
-          </select></td>
-        <td><select [(ngModel)]="student.gender" class="form-select" aria-label="Default select example">
-            <option selected>Open this select menu</option>
-            <option>Male</option>
-            <option>Female</option>
-            <option>Prefer not to specify</option>
-          </select></td>
-        <th><select [(ngModel)]="student.modeOfLearning" class="form-select" aria-label="Default select example">
-            <option selected>Open this select menu</option>
-            <option>Online</option>
-            <option>Physical</option>
-          </select></th>
-        <td><select [(ngModel)]="student.preferredCourse" class="form-select" aria-label="Default select example">
-            <option selected>Open this select menu</option>
-            <option *ngFor="let course of courses">{{course.course}}</option>
-          </select></td>
-        <td>{{student.id}}</td>
-        <td><a class="btn" (click)="saveEdittedApi(student)"><i class="far fa-save"></i></a></td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table table-striped container-xl container-fluid-md text-center " >
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Other Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">DOB</th>
+          <th scope="col">Country</th>
+          <th scope="col">State</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Modality</th>
+          <th scope="col">Course</th>
+          <th scope="col">ID</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="displayUserDetails">
+        <tr *ngFor="let student of students, let i = index">
+          <th>{{i + 1}}</th>
+          <td>{{student.firstName}}</td>
+          <td>{{student.otherName}}</td>
+          <td>{{student.lastName}}</td>
+          <td>{{student.email}}</td>
+          <td>{{student.DOB}}</td>
+          <td>{{student.country}}</td>
+          <td>{{student.stateOfOrigin}}</td>
+          <td>{{student.gender}}</td>
+          <th>{{student.modeOfLearning}}</th>
+          <td>{{student.preferredCourse}}</td>
+          <td>{{student.id}}</td>        
+          <td><a class="btn"><i class="fas fa-edit" (click)="editApi(student)"></i></a></td>
+          <td><a class="btn" (click)="deleteApi(student)"><i class="fas fa-trash-alt" ></i></a></td>
+        </tr>
+      </tbody>
+  
+      <tbody *ngIf="displayngModelForm">
+        <tr *ngFor="let student of students, let i = index">
+          <th>{{i + 1}}</th>
+          <td><input [(ngModel)]="student.firstName" type="name" class="form-control"></td>
+          <td><input [(ngModel)]="student.otherName" type="name" class="form-control"></td>
+          <td><input [(ngModel)]="student.lastName" type="name" class="form-control"></td>
+          <td><input [(ngModel)]="student.email" type="email" class="form-control"></td>
+          <td><input [(ngModel)]="student.DOB" type="date" class="form-control"></td>
+          <td><select [(ngModel)]="student.country" class="form-select" aria-label="Default select example">
+              <option selected>Open this select menu</option>
+              <option *ngFor="let country of countryApiContainer">{{country.country_name}}</option>
+            </select></td>
+          <td><select [(ngModel)]="student.stateOfOrigin" class="form-select" aria-label="Default select example">
+              <option selected>Open this select menu</option>
+              <option *ngFor="let state of stateApiContainer">{{state.state}}</option>
+            </select></td>
+          <td><select [(ngModel)]="student.gender" class="form-select" aria-label="Default select example">
+              <option selected>Open this select menu</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Prefer not to specify</option>
+            </select></td>
+          <th><select [(ngModel)]="student.modeOfLearning" class="form-select" aria-label="Default select example">
+              <option selected>Open this select menu</option>
+              <option>Online</option>
+              <option>Physical</option>
+            </select></th>
+          <td><select [(ngModel)]="student.preferredCourse" class="form-select" aria-label="Default select example">
+              <option selected>Open this select menu</option>
+              <option *ngFor="let course of courses">{{course.course}}</option>
+            </select></td>
+          <td>{{student.id}}</td>
+          <td><a class="btn" (click)="saveEdittedApi(student)"><i class="far fa-save"></i></a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   </div>
 
   <!-- complaint table --> 
   <div *ngIf="showComplaintTable">
     <h4 class="container " style="margin-top: 70px;">Complaints Table</h4>
-  <table class="table table-striped container-xl container-fluid-md text-center " >
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First Name</th>
-        <th scope="col">Last Name</th>
-        <th scope="col">Email</th>
-        <th scope="col">Phone Number</th>
-        <th scope="col">Complaint</th>
-        <th scope="col">Details</th>
-        <th scope="col">ID</th>
-        <th scope="col">Resolve</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let complaint of complaints, let i = index">
-        <th>{{i + 1}}</th>
-        <td>{{complaint.firstName}}</td>
-        <td>{{complaint.lastName}}</td>
-        <td class="text-wrap">{{complaint.email}}</td>
-        <td>{{complaint.phoneNumber}}</td>
-        <td>{{complaint.reasonForComplaint}}</td>
-        <td class="text-wrap">{{complaint.textAreaDetails}}</td>
-        <td>{{complaint.id}}</td>       
-        <td><a class="btn" (click)="deleteComplaint(complaint)"><i class="fas fa-check"></i></a></td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table table-striped container-xl container-fluid-md text-center " >
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Complaint</th>
+          <th scope="col">Details</th>
+          <th scope="col">ID</th>
+          <th scope="col">Resolve</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let complaint of complaints, let i = index">
+          <th>{{i + 1}}</th>
+          <td>{{complaint.firstName}}</td>
+          <td>{{complaint.lastName}}</td>
+          <td class="text-wrap">{{complaint.email}}</td>
+          <td>{{complaint.phoneNumber}}</td>
+          <td>{{complaint.reasonForComplaint}}</td>
+          <td class="text-wrap">{{complaint.textAreaDetails}}</td>
+          <td>{{complaint.id}}</td>       
+          <td><a class="btn" (click)="deleteComplaint(complaint)"><i class="fas fa-check"></i></a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   </div>
 
   <hr class="text-warning mt-5">

@@ -7,8 +7,6 @@
     color: white;
 }
 
-
-
 .switch {
     position: relative;
     display: inline-block;
@@ -61,7 +59,6 @@
     transform: translateX(26px);
   }
   
-  /* Rounded sliders */
   .slider.round {
     border-radius: 34px;
   }
