@@ -87,7 +87,7 @@ footer .install .row img{
     height: 30px;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-image: url('https://github.com/Iamoluberry/main-ecommerce-website/blob/main/images/app%20store.JPG?raw=true');
+    background-image: url('assets/images/app-store.JPG');
     border-radius: 8px;
 }
 #playStoreImg{
@@ -95,7 +95,7 @@ footer .install .row img{
     height: 30px;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-image: url('https://github.com/Iamoluberry/main-ecommerce-website/blob/main/images/play%20store.JPG?raw=true');
+    background-image: url('assets/images/play-store.JPG');
     border-radius: 8px;
 }
 

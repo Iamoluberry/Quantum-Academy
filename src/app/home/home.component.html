@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-light fixed-top">
   <div class="container">
-    <a class="navbar-nav" routerLink="/home"><img src="https://play-lh.googleusercontent.com/gwHEKMIhxYpj7moeK_DEvEntXtJ1oDLEPRmALK1TrIihtIKksoMrB5mDEzHN_pSOqfk" alt="Logo" id="nav-logo"/></a>
+    <a class="navbar-nav" routerLink="/home"><img src="assets/images/quantum-academy.png" alt="Logo" id="nav-logo"/></a>
 
     <button
       class="navbar-toggler"
@@ -102,23 +102,23 @@
     </div>
   
 
-    <div class="d-flex flex-column flex-md-row flex-lg-shrink" id="display-container">
-        <div data-aos="fade-left">
+    <div class="container  d-flex flex-column flex-md-row gap-3 justify-content-around " id="display-container">
+        <div data-aos="fade-left" class="flex-xl-shrink">
             <div class="item d-flex flex-column justify-content-between align-item-center">
-              <p class="mt-3 text-warning">Apply for admission</p>
-            <button class="btn btn-warning ms-3 w-25   mb-3 " routerLink="/apply">Apply</button>
+              <p class="mt-3 text-warning hero-font">Apply for admission</p>
+            <button class="btn btn-warning ms-3 w-30 mb-3 text-center  " routerLink="/apply">Apply</button>
             </div>
         </div>
-        <div data-aos="fade-up">
+        <div data-aos="fade-up" class="flex-xl-shrink">
             <div class="item d-flex flex-column justify-content-between">
-              <p class="mt-3 text-warning ">Prospective students and accepted candidates</p>
-            <button class="btn btn-warning ms-3 w-25  mb-3 " routerLink="/apply">Applicants</button>
+              <p class="mt-3 text-warning hero-font">Prospective students and accepted candidates</p>
+            <button class="btn btn-warning ms-3 w-30  mb-3 text-center  " routerLink="/apply">Applicants</button>
             </div>
         </div>
-        <div data-aos="fade-right">
+        <div data-aos="fade-right" class="flex-xl-shrink">
             <div class="item d-flex flex-column justify-content-between">
-              <p class="mt-3 text-warning">Explore our courses</p>
-            <button class="btn btn-warning ms-3 w-50  mb-3 " routerLink="/courses">Explore our courses</button>
+              <p class="mt-3 text-warning hero-font">Explore our courses</p>
+            <button class="btn btn-warning ms-3 w-50  mb-3 text-center " routerLink="/courses">Explore our courses</button>
             </div>
         </div>
     </div>
@@ -134,52 +134,60 @@
    <hr class="text-warning mt-5">
 
    <!--footer-->
-   <footer class="section-p1 mt-4">
-    <div class="col">
-        <img class="footerlogo" src="https://play-lh.googleusercontent.com/gwHEKMIhxYpj7moeK_DEvEntXtJ1oDLEPRmALK1TrIihtIKksoMrB5mDEzHN_pSOqfk" alt="logo">
-        <h4 class="font-weight-bold">Contact</h4>
-        <p><strong>Address:</strong> Pepper Road, Hazel Grove, Stockport, Cheshire, SK7 5SA, UK.</p>
-        <p><Strong>Phone:</Strong> +44 2035 143305</p>
-        <P><Strong>Hours:</Strong> 10:00 - 18:00, Mon - Fri</P>
-        <div class="follow">
-            <h4 class="font-weight-bold">Follow Us</h4>
-            <div class="icon">
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-youtube"></i>
-                <i class="fab fa-pinterest"></i>
-            </div>
-        </div>
-    </div>
+   <footer class="section-p1 mt-4 w-100">
 
-    <div class="col">
-        <h4 class="font-weight-bold">Study</h4>
-        <a href="#">Undergraduate</a>
-        <a href="#">Postgraduate</a>
-        <a href="#">Distance learning</a>
-        <a href="#">Two-year accelerated degrees</a>
-        <a href="#">Partnerships</a>            
-    </div>
-
-    <div class="col">
-        <h4 class="font-weight-bold">Information for</h4>
-        <a href="#">Schools and colleges</a>
-        <a href="#">Alumni</a>
-        <a href="#">Current students</a>
-        <a href="#">Current staff</a>         
-    </div>
-
-    <div class="col install">
-        <h4 class="font-weight-bold">Install App</h4>
-        <p>Get app on Apple store or Play store</p>
-        <div class="row d-flex gap-3">
-            <div id="appStoreImg"></div>
-            <div id="playStoreImg"></div>
-        </div>
+    <div class="d-flex flex-column w-100 ">
+      <div class="col">
+        <img class="footerlogo" src="assets/images/quantum-academy.png" alt="logo">
+      </div>
+  
+      <div class="row w-100  d-flex  gap-5  justify-content-between flex-sm-row">
+        <div class="col-md-2 col-sm-5">
+          <h4 class="font-weight-bold">Contact</h4>
+          <p><strong>Address:</strong> Pepper Road, Hazel Grove, Stockport, Cheshire, SK7 5SA, UK.</p>
+          <p><Strong>Phone:</Strong> +44 2035 143305</p>
+          <P><Strong>Hours:</Strong> 10:00 - 18:00, Mon - Fri</P>
+          <div class="follow">
+              <h4 class="font-weight-bold">Follow Us</h4>
+              <div>
+                  <i class="fab fa-facebook"></i>
+                  <i class="fab fa-twitter"></i>
+                  <i class="fab fa-instagram"></i>
+                  <i class="fab fa-youtube"></i>
+                  <i class="fab fa-pinterest"></i>
+              </div>
+          </div>
+      </div>
+  
+      <div class="col-md-2 col-sm-5">
+          <h4 class="font-weight-bold  ">Study</h4>
+          <p>Undergraduate</p>
+          <p>Postgraduate</p>
+          <p>Distance learning</p>
+          <p>Two-year accelerated degrees</p>
+          <p>Partnerships</p>            
+      </div>
+  
+      <div class="col-md-2 col-sm-5">
+          <h4 class="font-weight-bold ">Information for</h4>
+          <p>Schools and colleges</p>
+          <p>Alumni</p>
+          <p>Current students</p>
+          <p>Current staff</p>         
+      </div>
+  
+      <div class="col-md-2 install col-sm-5">
+          <h4 class="font-weight-bold">Install App</h4>
+          <p>Get app on Apple store or Play store</p>
+          <div class="row d-flex gap-2" style="margin-left: 1px;">
+              <div id="appStoreImg"></div>
+              <div id="playStoreImg"></div>
+          </div>
+      </div>
+      </div>
     </div>
 
     <div class="copyright">
-        <p>&copy; Quantum Academy {{date}}</p>
+      <p>&copy; Quantum Academy {{date}}</p>
     </div>
 </footer>
