@@ -3,7 +3,6 @@ import { Route, Router } from '@angular/router';
 import { ApiHandlerService } from 'src/app/api-service/api-handler.service';
 import { Location } from '@angular/common';
 import Swal from 'sweetalert2';
-import { first } from 'rxjs';
 import { course } from 'src/app/courses-interface';
 import { CountryApiService } from 'src/app/api-service/country-api.service';
 import { CoursesService } from 'src/app/courses.service';
@@ -59,30 +58,42 @@ export class QaAdminComponent {
     this.apiHandler.getComplaintsApi().subscribe(data => this.complaints = data)
   }
   
-  deleteComplaint(complaint: {id: any, firstName: string, lastName: string}){
-    this.apiHandler.deleteComplaintsApi(complaint.id).subscribe();
-    Swal.fire({
-      title: 'Success!',
-      text: `${complaint.firstName} ${complaint.lastName} complaint resolved successfully`,
-      icon: 'success',
-      confirmButtonText: 'Done'
-    });
+  deleteComplaint(complaint: {id: any, firstName: string, lastName: string}) {
+    if (complaint) {
+      this.apiHandler.deleteComplaintsApi(complaint.id).subscribe(() => {
+        Swal.fire({
+          title: 'Success!',
+          text: `${complaint.firstName} ${complaint.lastName} complaint resolved successfully`,
+          icon: 'success',
+          confirmButtonText: 'Done'
+        });
+      });
+
+      setTimeout(() => {
+        this.getComplaintsApi();
+      }, 1000); 
+    } 
   }
 
   editApi(student: {id: any, firstName: string, lastName: string}){
     this.displayUserDetails = false;
     this.displayngModelForm = true;
-
   }
 
   deleteApi(student: {id: any, firstName: string, lastName: string}){
-      this.apiHandler.deleteApi(student.id).subscribe();
-    Swal.fire({
-      title: 'Success!',
-      text: `${student.firstName} ${student.lastName} details delected successfully`,
-      icon: 'success',
-      confirmButtonText: 'Done'
-    });
+      if (student) {
+        this.apiHandler.deleteApi(student.id).subscribe();
+      Swal.fire({
+        title: 'Success!',
+        text: `${student.firstName} ${student.lastName} details delected successfully`,
+        icon: 'success',
+        confirmButtonText: 'Done'
+      });
+
+      setTimeout(() => {
+        this.getApi();
+      }, 1000);
+      }
   }
 
   saveEdittedApi(student: {id: any, firstName: string, lastName: string}){
@@ -101,8 +112,6 @@ export class QaAdminComponent {
       } else {
         window.location.reload();
       }
-
-    
   }
 
   getCountryApi(){
@@ -132,9 +141,10 @@ export class QaAdminComponent {
     this.getStateApi();
     this.getCourse();
     this.getApi();
-    this.getComplaintsApi()
+    this.getComplaintsApi();
   }
 }
+
 
 
 
