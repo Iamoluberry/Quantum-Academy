@@ -18,7 +18,7 @@ import { CoursesService } from 'src/app/courses.service';
 export class AdmissionComponent implements OnInit {
   date : Number = new Date().getFullYear();
   allApplicantApi: any;
-  userDetails: any;
+  userDetails: any = {};
 
   countryApiContainer: any;
   stateApiContainer: any;
@@ -28,11 +28,7 @@ export class AdmissionComponent implements OnInit {
   displayUserDetails: boolean = true;
   displayngModelForm: boolean = false;
 
-  constructor(private route: ActivatedRoute, public apiHandler: ApiHandlerService, private location: Location, private router: Router, private countryApi: CountryApiService, private coursesservice: CoursesService, private fb: FormBuilder) {
-
-
-    
-  }
+  constructor(private route: ActivatedRoute, public apiHandler: ApiHandlerService, private location: Location, private router: Router, private countryApi: CountryApiService, private coursesservice: CoursesService, private fb: FormBuilder) {}
 
   ngOnInit() {
     this.getApplicantApi();

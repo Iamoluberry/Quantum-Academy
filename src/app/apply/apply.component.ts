@@ -21,8 +21,21 @@ export class ApplyComponent {
   stateApiContainer: any;
   courses: course[] = [];
   allApplicantApi: any;
+  submitFormText: string = '';
 
   constructor(private countryApi: CountryApiService, private apiHandler: ApiHandlerService, private coursesservice: CoursesService, private router: Router, private route: ActivatedRoute){}
+
+  ngOnInit(){
+    this.doSomething()
+    this.getCountryApi();
+    this.getStateApi();
+    this.getCourse();
+    scrollTo(0,0);
+  }
+
+  doSomething(){
+    this.loading ? this.submitFormText = 'Loading' : this.submitFormText = 'Submit'
+  }
 
 
   applicantForm = new FormGroup({
@@ -43,7 +56,7 @@ export class ApplyComponent {
   
     onSubmit(data: any) {
       this.loading = true;
-      if (this.applicantForm.invalid) {
+      if (this.applicantForm.invalid){        
         Swal.fire({
           title: 'Error!',
           text: 'Enter the right details',
@@ -64,7 +77,8 @@ export class ApplyComponent {
         
         this.apiHandler.postApplicantApi(data).subscribe({
           next: (response) => {
-
+            const presentUserId = response.id;
+          
             Swal.fire({
               title: 'Success!',
               text: 'Submitted successfully',
@@ -73,13 +87,7 @@ export class ApplyComponent {
             });
             this.applicantForm.reset();  // to reset newform
             this.loading = false;
-
-
-            this.apiHandler.getApplicantApi().subscribe(data => {
-              this.allApplicantApi = data;
-              this.router.navigate([`/admission/${this.allApplicantApi.length}`]);
-            })
-            
+            this.router.navigate([`/admission/${presentUserId}`]);   
           },
           error: (err) => console.log(err),
         })
@@ -100,9 +108,5 @@ export class ApplyComponent {
   }
 
 
-  ngOnInit(){
-    this.getCountryApi();
-    this.getStateApi();
-    this.getCourse();
-  }
+  
 }

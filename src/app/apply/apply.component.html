@@ -64,70 +64,133 @@
     </div>
     
     <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">First name</label>
-        <input formControlName="firstName" type="name" class="form-control" placeholder="First name">
+        <div>
+            <label for="exampleFormControlInput1" class="form-label">First name</label>
+            <input formControlName="firstName" type="name" class="form-control" placeholder="First name">
+        </div>
+        <div *ngIf="applicantForm.controls['firstName'].invalid && applicantForm.controls['firstName'].touched" >
+            <div *ngIf="applicantForm.controls['firstName'].hasError('required')" class="text-danger">
+            First name is required.
+          </div>
+        </div>
     </div>
 
     <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Other name</label>
+        <div>
+            <label for="exampleFormControlInput1" class="form-label">Other name</label>
         <input formControlName="otherName" type="name" class="form-control" placeholder="Other name">
+        </div>
+        <div *ngIf="applicantForm.controls['otherName'].invalid && applicantForm.controls['otherName'].touched" >
+            <div *ngIf="applicantForm.controls['otherName'].hasError('required')" class="text-danger">
+            Other name is required.
+          </div>
+        </div>
     </div>
 
     <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Last name</label>
+        <div>
+            <label for="exampleFormControlInput1" class="form-label">Last name</label>
         <input formControlName="lastName" type="name" class="form-control" placeholder="Last name">
+        </div>
+        <div *ngIf="applicantForm.controls['lastName'].invalid && applicantForm.controls['lastName'].touched" >
+            <div *ngIf="applicantForm.controls['lastName'].hasError('required')" class="text-danger">
+            Last name is required.
+          </div>
+        </div>
     </div>
       
     <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Date of birth</label>
+        <div>
+            <label for="exampleFormControlInput1" class="form-label">Date of birth</label>
         <input formControlName="DOB" type="date" class="form-control">
+        </div>
+        <div *ngIf="applicantForm.controls['DOB'].invalid && applicantForm.controls['DOB'].touched" >
+            <div *ngIf="applicantForm.controls['DOB'].hasError('required')" class="text-danger">
+            DOB is required.
+          </div>
+        </div>
     </div>
 
     <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Country</label>
+        <div>
+            <label for="exampleFormControlInput1" class="form-label">Country</label>
         <select formControlName="country" class="form-select" aria-label="Default select example">
             <option value="" disabled selected hidden>Select country</option>
             <option *ngFor="let country of countryApiContainer">{{country.country_name}}</option>
           </select>
+        </div>
+        <div *ngIf="applicantForm.controls['country'].invalid && applicantForm.controls['country'].touched" >
+            <div *ngIf="applicantForm.controls['country'].hasError('required')" class="text-danger">
+            Country is required.
+          </div>
+        </div>
     </div>
 
     <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">State of origin</label>
+        <div>
+            <label for="exampleFormControlInput1" class="form-label">State of origin</label>
         <select formControlName="stateOfOrigin" class="form-select" aria-label="Default select example">
             <option value="" disabled selected hidden>Select state</option>
             <option *ngFor="let state of stateApiContainer">{{state.state}}</option>
           </select>
+        </div>
+        <div *ngIf="applicantForm.controls['stateOfOrigin'].invalid && applicantForm.controls['stateOfOrigin'].touched" >
+            <div *ngIf="applicantForm.controls['stateOfOrigin'].hasError('required')" class="text-danger">
+            State of origin is required.
+          </div>
+        </div>
     </div>
 
     <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Gender</label>
+        <div>
+            <label for="exampleFormControlInput1" class="form-label">Gender</label>
         <select formControlName="gender" class="form-select">
             <option value="" disabled selected hidden>Select gender</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
             <option value="Prefer not to specify">Prefer not to specify</option>
           </select>
+        </div>
+        <div *ngIf="applicantForm.controls['gender'].invalid && applicantForm.controls['gender'].touched" >
+            <div *ngIf="applicantForm.controls['gender'].hasError('required')" class="text-danger">
+            Gender is required.
+          </div>
+        </div>
     </div>
 
     <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Mode of learning</label>
+        <div>
+            <label for="exampleFormControlInput1" class="form-label">Mode of learning</label>
         <select formControlName="modeOfLearning" class="form-select">
             <option value="" disabled selected hidden>Select preferred learning mode</option>
             <option value="Online">Online</option>
             <option value="Physical">Physical</option>
           </select>
+        </div>
+        <div *ngIf="applicantForm.controls['modeOfLearning'].invalid && applicantForm.controls['modeOfLearning'].touched" >
+            <div *ngIf="applicantForm.controls['modeOfLearning'].hasError('required')" class="text-danger">
+            Mode of learning is required.
+          </div>
+        </div>
     </div>
 
     <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Preferred course of study</label>
+        <div>
+            <label for="exampleFormControlInput1" class="form-label">Preferred course of study</label>
         <select formControlName="preferredCourse" class="form-select" aria-label="Default select example">
             <option value="" disabled selected hidden>Select course</option>
             <option *ngFor="let course of courses">{{course.course}}</option>
           </select>
+        </div>
+        <div *ngIf="applicantForm.controls['preferredCourse'].invalid && applicantForm.controls['preferredCourse'].touched" >
+            <div *ngIf="applicantForm.controls['preferredCourse'].hasError('required')" class="text-danger">
+            Mode of learning is required.
+          </div>
+        </div>
     </div>
    
 
-    <button class="btn btn-warning" [disabled]="loading">Submit form</button>
+    <button class="btn btn-warning" [disabled]="loading">{{ loading ? 'Loading' : 'Submit' }}</button>
 </form>
 
 <hr class="text-warning mt-5">
