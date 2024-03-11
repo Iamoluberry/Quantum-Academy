@@ -41,8 +41,15 @@
 
 <form class="container" [formGroup]="applicantForm" (submit)="onSubmit(applicantForm.value)">
     <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Email</label>
-        <input formControlName="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="email@gmail.com">
+        <div>
+            <label for="exampleFormControlInput1" class="form-label">Email</label>
+            <input formControlName="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="email@gmail.com">
+        </div>
+        <div *ngIf="applicantForm.controls['email'].invalid && applicantForm.controls['email'].touched" >
+            <div *ngIf="applicantForm.controls['email'].hasError('required')" class="text-danger">
+            Email name is required.
+          </div>
+        </div>
     </div>
 
     <div class="form-row d-flex flex-column flex-sm-row justify-content-between  gap-1">

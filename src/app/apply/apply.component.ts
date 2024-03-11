@@ -5,7 +5,7 @@ import { CoursesService } from '../courses.service';
 import { course } from '../courses-interface';
 import { ApiHandlerService } from '../api-service/api-handler.service';
 import Swal from 'sweetalert2';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-apply',
@@ -26,21 +26,16 @@ export class ApplyComponent {
   constructor(private countryApi: CountryApiService, private apiHandler: ApiHandlerService, private coursesservice: CoursesService, private router: Router, private route: ActivatedRoute){}
 
   ngOnInit(){
-    this.doSomething()
+    window.scrollTo(0, 0);
+
     this.getCountryApi();
     this.getStateApi();
-    this.getCourse();
-    scrollTo(0,0);
+    this.getCourse();    
   }
-
-  doSomething(){
-    this.loading ? this.submitFormText = 'Loading' : this.submitFormText = 'Submit'
-  }
-
 
   applicantForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(5)]),
+    password: new FormControl('', [Validators.required, Validators.minLength(4)]),
     confirmPassword: new FormControl('', [Validators.required, Validators.minLength(5)]),
     firstName: new FormControl('', [Validators.required, Validators.minLength(1)]),
     otherName: new FormControl('', [Validators.required, Validators.minLength(1)]),
@@ -105,8 +100,5 @@ export class ApplyComponent {
 
   getCourse(){
     this.coursesservice.getCourses().subscribe(course => this.courses = course)
-  }
-
-
-  
+  }  
 }
